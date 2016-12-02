@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>fengze super-shop Created Web Application</display-name>
+<!--过滤器   编码格式-->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>com.fengze.shop.web.filter.CharacterEncodingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <!--登陆-->
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/shop/login</url-pattern>
+    </servlet-mapping>
+
+    <!--登出-->
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/shop/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <!--注册-->
+    <servlet>
+        <servlet-name>registerServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.RegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerServlet</servlet-name>
+        <url-pattern>/shop/register</url-pattern>
+    </servlet-mapping>
+
+    <!--菜单查询-->
+    <servlet>
+        <servlet-name>menuServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.MenuServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>menuServlet</servlet-name>
+        <url-pattern>/shop/menu</url-pattern>
+    </servlet-mapping>
+
+    <!--图片菜单查询-->
+    <servlet>
+        <servlet-name>menuProServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.ProductMenuServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>menuProServlet</servlet-name>
+        <url-pattern>/shop/menu/pro</url-pattern>
+    </servlet-mapping>
+
+    <!--新增产品信息-->
+    <servlet>
+        <servlet-name>addProServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.admin.ProductAddServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addProServlet</servlet-name>
+        <url-pattern>/admin/addPro</url-pattern>
+    </servlet-mapping>
+
+    <!--产品列表信息-->
+    <servlet>
+        <servlet-name>proListServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.ProductListServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>proListServlet</servlet-name>
+        <url-pattern>/shop/prolist</url-pattern>
+    </servlet-mapping>
+
+    <!--产品详情-->
+    <servlet>
+        <servlet-name>proDetailServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.ProDetailServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>proDetailServlet</servlet-name>
+        <url-pattern>/shop/proDet</url-pattern>
+    </servlet-mapping>
+
+    <!--添加购物车-->
+    <servlet>
+        <servlet-name>carServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.CarServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>carServlet</servlet-name>
+        <url-pattern>/shop/addCar</url-pattern>
+    </servlet-mapping>
+
+    <!--查询购物车-->
+    <servlet>
+        <servlet-name>carListServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.CarListServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>carListServlet</servlet-name>
+        <url-pattern>/shop/carList</url-pattern>
+    </servlet-mapping>
+
+    <!--删除购物车-->
+    <servlet>
+        <servlet-name>delCarServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.CarDelServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>delCarServlet</servlet-name>
+        <url-pattern>/shop/delCarItem</url-pattern>
+    </servlet-mapping>
+
+    <!--更新购物车-->
+    <servlet>
+        <servlet-name>updCarServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.CarUpdServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>updCarServlet</servlet-name>
+        <url-pattern>/shop/updCarItem</url-pattern>
+    </servlet-mapping>
+
+    <!--确认订单-->
+    <servlet>
+        <servlet-name>confirmOrderServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.ConfirmOrderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>confirmOrderServlet</servlet-name>
+        <url-pattern>/shop/confirmOrder</url-pattern>
+    </servlet-mapping>
+
+    <!--生成订单-->
+    <servlet>
+        <servlet-name>addOrderServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.AddOrderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addOrderServlet</servlet-name>
+        <url-pattern>/shop/addOrder</url-pattern>
+    </servlet-mapping>
+
+    <!--cookie购物车-->
+    <servlet>
+        <servlet-name>cookieCarServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.shop.CookieCarServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cookieCarServlet</servlet-name>
+        <url-pattern>/shop/cookieCar</url-pattern>
+    </servlet-mapping>
+
+    <!--图片上传-->
+    <servlet>
+        <servlet-name>addPicServlet</servlet-name>
+        <servlet-class>com.fengze.shop.web.admin.AddPicServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addPicServlet</servlet-name>
+        <url-pattern>/admin/addPic</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/shop/page-404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/shop/page-500.jsp</location>
+    </error-page>
+
+    <welcome-file-list>
+        <welcome-file>/shop/index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
